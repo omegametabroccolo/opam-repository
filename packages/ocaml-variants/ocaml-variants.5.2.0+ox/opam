@@ -21,12 +21,12 @@ conflict-class: "ocaml-core-compiler"
 flags: compiler
 setenv: CAML_LD_LIBRARY_PATH = "%{lib}%/stublibs"
 build: [
-  ["tar" "-xf" "init-compiler.tar.gz"] {os != "openbsd}
-  ["tar" "-xf" "init-dune.tbz"] {os != "openbsd}
-  ["tar" "-xf" "init-menhir.tar.gz"] {os != "openbsd}
-  ["tar" "-xzf" "init-compiler.tar.gz"] {os = "openbsd}
-  ["tar" "-xjf" "init-dune.tbz"] {os = "openbsd}
-  ["tar" "-xzf" "init-menhir.tar.gz"] {os = "openbsd}
+  ["tar" "-xf" "init-compiler.tar.gz"] {os != "openbsd"}
+  ["tar" "-xf" "init-dune.tbz"] {os != "openbsd"}
+  ["tar" "-xf" "init-menhir.tar.gz"] {os != "openbsd"}
+  ["tar" "-xzf" "init-compiler.tar.gz"] {os = "openbsd"}
+  ["tar" "-xjf" "init-dune.tbz"] {os = "openbsd"}
+  ["tar" "-xzf" "init-menhir.tar.gz"] {os = "openbsd"}
   [
     "sh"
     "-exc"
