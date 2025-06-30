@@ -61,7 +61,8 @@ build: [
     "-exc"
     "cd menhir-20231231-d3d815e4f554da68b8c247241c8f8678926eecaa; PATH=%{build}%/init_deps/bin/:$PATH %{build}%/init_deps/bin/dune install --prefix %{build}%/init_deps/ -p menhirLib -j %{jobs}%"
   ]
-  ["sh" "-exc" "autoconf || autoconf27"]
+  ["sh" "-exc" "autoconf || autoconf27"] {os != "openbsd"}
+  ["sh" "-exc" "M4=gm4 autoconf || autoconf27"] {os = "openbsd"}
   [
     "sh"
     "-exc"
