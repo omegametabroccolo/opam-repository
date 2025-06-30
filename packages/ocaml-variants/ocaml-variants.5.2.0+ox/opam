@@ -66,7 +66,12 @@ build: [
     "sh"
     "-exc"
     "PATH=%{build}%/init_deps/bin/:$PATH ./configure --enable-runtime5 --enable-middle-end=flambda2 --enable-poll-insertion --enable-multidomain --enable-stack-checks --disable-naked-pointers '--prefix=%{prefix}%' '--with-dune=%{build}%/init_deps/bin/dune'"
-  ]
+  ] {os != "openbsd"}
+  [
+    "sh"
+    "-exc"
+    "PATH=%{build}%/init_deps/bin/:$PATH ./configure --enable-middle-end=flambda2 --enable-poll-insertion --enable-multidomain --enable-stack-checks --disable-naked-pointers '--prefix=%{prefix}%' '--with-dune=%{build}%/init_deps/bin/dune'"
+  ] {os = "openbsd"}
   ["sh" "-exc" "PATH=%{build}%/init_deps/bin/:$PATH make -j%{jobs}%"]
 ]
 install: ["sh" "-exc" "PATH=%{build}%/init_deps/bin/:$PATH make install"]
