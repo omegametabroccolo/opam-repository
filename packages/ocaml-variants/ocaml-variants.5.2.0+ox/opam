@@ -101,16 +101,10 @@ extra-source "init-menhir.tar.gz" {
 }
 url {
   src:
-    "https://github.com/oxcaml/oxcaml/archive/f74e02025e37931e048296af81134a1e10ec79c1.tar.gz"
-  checksum:
-    "sha256=6d5cbccbfa453228f57a53f7aff226932c7bcf22c234bcbc51e920d3a5faa14b"
-} {os != "openbsd"}
-url {
-  src:
     "https://github.com/omegametabroccolo/oxcaml/archive/refs/tags/openbsd-v1.tar.gz"
   checksum:
     "sha256=180b0cad921b62b499b4f6dc86afca2953990d3eb03ba225ebdcaf60d7fd746f"
-} {os = "openbsd"}
+}
 patches: ["ignore-opam.patch"]
 extra-files: [
   [
